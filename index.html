@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>CL97 視訊會議入口</title>
+<style>
+  :root {
+    --bg: #f4f6fa;
+    --fg: #1a2233;
+    --btn: #1d6fe0;
+    --btn-active: #1558b8;
+    --btn-fg: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11151c;
+      --fg: #eef1f6;
+      --btn: #4a90f0;
+      --btn-active: #3a7bd8;
+      --btn-fg: #0b1220;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+  }
+  main { width: 100%; max-width: 420px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; text-align: center; margin: 0 0 32px; }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 76px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    background: var(--btn);
+    color: var(--btn-fg);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:active { background: var(--btn-active); }
+</style>
+</head>
+<body>
+<main>
+  <h1>CL97 視訊會議入口</h1>
+  <a class="btn" href="org.jitsi.meet://meet.jp.ychkef.org/CL971">台南區</a>
+  <a class="btn" href="org.jitsi.meet://meet.jp.ychkef.org/CL972">新營區</a>
+</main>
+</body>
+</html>

@@ -45,9 +45,11 @@
   var ua = navigator.userAgent;
   var isMobile = /Android|iPhone|iPad|iPod/i.test(ua) ||
                  (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1); // iPadOS
-  var url = (isMobile ? "org.jitsi.meet://" : "https://") + HOST + "/" + room;
-  document.getElementById("go").href = url;
-  location.replace(url);
+  var webUrl = "https://" + HOST + "/" + room;
+  var appUrl = "org.jitsi.meet://" + HOST + "/" + room;
+  // 按鈕一律用 https 網頁版（沒裝 App 時的備案）
+  document.getElementById("go").href = webUrl;
+  location.replace(isMobile ? appUrl : webUrl);
 </script>
 </body>
 </html>

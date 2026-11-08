@@ -31,7 +31,7 @@
 </head>
 <body>
   <h1>CL97 視訊會議</h1>
-  <p>正在開啟 Jitsi Meet⋯</p>
+  <p>正在開啟會議⋯</p>
   <a id="go" class="btn" href="#">開啟會議</a>
 <script>
   // 用法：index.html?room=CL97-2 ；未指定時預設 CL97-1
@@ -41,7 +41,11 @@
   var room = new URLSearchParams(location.search).get("room") || DEFAULT_ROOM;
   if (!/^[A-Za-z0-9_-]{1,64}$/.test(room)) room = DEFAULT_ROOM;
 
-  var url = "org.jitsi.meet://" + HOST + "/" + room;
+  // 手機/平板 → 開 Jitsi App；電腦 → 開網頁版
+  var ua = navigator.userAgent;
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(ua) ||
+                 (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1); // iPadOS
+  var url = (isMobile ? "org.jitsi.meet://" : "https://") + HOST + "/" + room;
   document.getElementById("go").href = url;
   location.replace(url);
 </script>
